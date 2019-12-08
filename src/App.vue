@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <HelloWorld msg="Hello Vue in CodeSandbox!" />
+    <router-view/>
   </div>
 </template>
 
@@ -12,6 +11,14 @@ export default {
   name: "App",
   components: {
     HelloWorld
+  },
+  methods: {
+    change: function() {
+      this.message.data = "change";
+    }
+  },
+  data() {
+    return {};
   }
 };
 </script>
