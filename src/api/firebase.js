@@ -1,6 +1,5 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
-
 let firebaseConfig = {
   apiKey: "AIzaSyC_bQgvZYtcQjwmmXR2I1YfyZLM7P1t9tQ",
   authDomain: "forestvue-8424e.firebaseapp.com",
@@ -12,11 +11,9 @@ let firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-let db = firebase.firestore();
-let doc = db.collection("test").doc("unw7czikq27tZ67xabwF");
-let union = firebase.firestore.FieldValue.arrayUnion;
-export default {
-  db,
-  union,
-  doc
-};
+const db = firebase.firestore();
+const doc = db.collection("test").doc("unw7czikq27tZ67xabwF");
+const union = firebase.firestore.FieldValue.arrayUnion;
+const now = firebase.firestore.Timestamp.now;
+const del = firebase.firestore.FieldValue.delete;
+export { db, union, doc, now, del };
