@@ -1,17 +1,22 @@
 <template>
   <div>
     <div>
-      <button @click="hello">say hello</button>
+      
     </div>
   </div>
 </template>
 
 <script>
+import Resource from './Resource.js';
 export default {
   name: "HelloWorld",
+  created(){
+      console.log(this.resource);
+      console.log(Resource.createItem());
+  },
   data() {
     return {
-      obj: ""
+      resource: Resource.createItem()
     };
   },
   methods: {
