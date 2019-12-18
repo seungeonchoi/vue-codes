@@ -1,18 +1,16 @@
 <template>
   <div>
-    <div>
-      
-    </div>
+    <div>{{resource.name}}</div>
   </div>
 </template>
 
 <script>
-import Resource from './Resource.js';
+import Resource from "./Resource.js";
 export default {
   name: "HelloWorld",
-  created(){
-      console.log(this.resource);
-      console.log(Resource.createItem());
+  created() {
+    console.log(this.resource);
+    console.log(Resource.createItem());
   },
   data() {
     return {
