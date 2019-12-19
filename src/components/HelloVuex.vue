@@ -1,19 +1,23 @@
 <template>
   <div>
-    <div>{{resource.name}}</div>
+    <div>{{subject.data}}</div>
   </div>
 </template>
 
 <script>
 import Resource from "./Resource.js";
+import { mapState } from "vuex";
 export default {
   name: "HelloWorld",
   created() {
-    console.log(this.resource);
-    console.log(Resource.createItem());
+    this.subject= this.info;
+  },
+  computed: {
+    ...mapState(["info"])
   },
   data() {
     return {
+      subject: 1,
       resource: Resource.createItem()
     };
   },
