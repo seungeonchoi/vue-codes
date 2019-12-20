@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HelloWorld from "../components/HelloVuex.vue";
+import HelloVuex from "../components/HelloVuex.vue";
 import HelloFire from "../components/HelloFire.vue";
 import Parent from "../components/props/Parent.vue";
 import InputTest from "../components/InputTest.vue";
@@ -11,7 +11,7 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: HelloWorld
+      component: HelloVuex
     },
     {
       path: "/firebase",

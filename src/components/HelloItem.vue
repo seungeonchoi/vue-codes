@@ -1,8 +1,9 @@
 <template>
-  <div>{{msg}}</div>
+  <div>{{data.name}}</div>
 </template>
 
 <script>
+import Resource from "./Resource.js";
 export default {
   name: "HelloWorld",
   props: {
@@ -10,7 +11,8 @@ export default {
   },
   data() {
     return {
-      message: "hi"
+      message: "hi",
+      data: Resource.createItem(),
     };
   }
 };

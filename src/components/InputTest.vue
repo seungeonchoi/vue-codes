@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Resource from "./Resource.js";
 export default {
   name: "InputTest",
   created() {
@@ -12,6 +13,7 @@ export default {
   },
   data() {
     return {
+      data: Resource.createItem()
     };
   },
   methods: {

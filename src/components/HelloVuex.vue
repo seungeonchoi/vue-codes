@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div><h1>hello vuex</h1></div>
     <div>{{subject.data}}</div>
   </div>
 </template>
