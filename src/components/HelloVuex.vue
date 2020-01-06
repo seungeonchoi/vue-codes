@@ -1,30 +1,34 @@
 <template>
   <div>
-    <div><h1>hello vuex</h1></div>
-    <div>{{subject.data}}</div>
+    <div>
+      <h1>hello vuex</h1>
+    </div>
+    <div v-if="this.info.data">
+      {{car}}
+      <button @click="car.getEngine().increaseFuel()">increase</button>
+    </div>
   </div>
 </template>
 
 <script>
-import Resource from "./Resource.js";
 import { mapState } from "vuex";
+import { setTimeout } from "timers";
 export default {
   name: "HelloWorld",
-  created() {
-    this.subject= this.info;
-  },
+
   computed: {
-    ...mapState(["info"])
+    ...mapState(["info"]),
+    car: function() {
+      return this.info.data;
+    }
   },
-  data() {
-    return {
-      subject: 1,
-      resource: Resource.createItem()
-    };
+  mounted() {
+    setTimeout(this.hello, 10000);
   },
   methods: {
     hello: function() {
-      this.obj.data = "hello";
+      console.log(this);
+      this.$store.commit("createCar");
     }
   }
 };
